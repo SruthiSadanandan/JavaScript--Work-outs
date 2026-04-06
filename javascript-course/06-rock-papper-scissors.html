@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rock</title>
+</head>
+<script>
+    function playGame(playMove) {
+        result = '';
+        if (playMove === 'Scissors') {
+            if (computerMove === 'Scissors') {
+                result = 'Tie';
+            } else if (computerMove === 'rock') {
+                result = 'You lose';
+            }
+            else if (computerMove === 'Paper') {
+                result = 'You win';
+            }
+        } else if (playMove === 'Papper') {
+            if (computerMove === 'Paper') {
+                result = 'Tie';
+            } else if (computerMove === 'Scissors') {
+                result = 'You lose';
+            }
+            else if (computerMove === 'rock') {
+                result = 'You win';
+            }
+        } else if (playMove === 'rock') {
+            if (computerMove === 'rock') {
+                result = 'Tie';
+            } else if (computerMove === 'Paper') {
+                result = 'You lose';
+            }
+            else if (computerMove === 'Scissors') {
+                result = 'You win';
+            }
+        }
+        alert(`you picked $playMove. computer pick${computerMove} . So ${result}`);
+    }
+</script>
+
+<body>
+    <p>
+        Rock papper Scissors
+    </p>
+    <button onclick="
+     let randomNumber= Math.random()
+     let computerMove='';
+    // let result='';
+        console.log(randomNumber);
+        if(randomNumber>0 && randomNumber<1/3){
+             computerMove='rock';
+            // console.log('rock');
+        }else if(randomNumber>=1/3&& randomNumber<2/3){
+                  computerMove='Papper';
+// console.log('paper');
+
+        }
+        else if(randomNumber>=2/3&&randomNumber<1){
+                  computerMove='Scissors';
+                //   var randomNumber=0
+            // console.log('Scissors')
+        //    const randomNumber=6.7;
+        }
+        playGame('rock');
+alert(`you picked rock.Computer pick${computerMove} So ${result}`);
+        
+        ">Rock</button>
+    <button onclick=" randomNumber= Math.random()
+     computerMove='';
+    // let result='';
+        console.log(randomNumber);
+        if(randomNumber>0 && randomNumber<1/3){
+             computerMove='rock';
+            // console.log('rock');
+        }else if(randomNumber>=1/3&& randomNumber<2/3){
+                  computerMove='Papper';
+// console.log('paper');
+
+        }
+        else if(randomNumber>=2/3&&randomNumber<1){
+                  computerMove='Scissors';
+                //   var randomNumber=0
+            // console.log('Scissors')
+        //    const randomNumber=6.7;
+        }
+        //  result='';
+        // if(computerMove==='Paper'){
+        //     result='Tie';
+        // }else if(computerMove==='Scissors')
+        // {
+        //     result='You lose';
+        // }
+        // else if(computerMove==='rock'){
+        //     result='You win';
+        // }
+        playGame('Papper')
+alert(`you picked paper.computer pick${computerMove}  So ${result}`);
+        
+        ">Paper</button>
+    <button onclick=" randomNumber= Math.random()
+     computerMove='';
+    // let result='';
+        console.log(randomNumber);
+        if(randomNumber>0 && randomNumber<1/3){
+             computerMove='rock';
+            // console.log('rock');
+        }else if(randomNumber>=1/3&& randomNumber<2/3){
+                  computerMove='Papper';
+// console.log('paper');
+
+        }
+        else if(randomNumber>=2/3&&randomNumber<1){
+                  computerMove='Scissors';
+                //   var randomNumber=0
+            // console.log('Scissors')
+        //    const randomNumber=6.7;
+        }
+         playGame( 'Scissors' )
+        
+        ">Scissors</button>
+
+</body>
+
+</html>

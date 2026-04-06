@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Objects
+
+    </title>
+</head>
+
+<body>
+<h3>Objects Literals</h3>
+    <script>
+
+        const user = {
+            name: 'Riya',
+            age: 23// last one no coma
+        };
+        const newUser = {
+            name: 'Neena',
+            age: 24
+        }
+        const student = {
+            name: 'Geethu',
+            age: 22,
+            rollNumber: 47,
+            degree: 'Bsc',
+            isGraduated: true
+        }
+        document.writeln("Hello" + "" + user.name + "you are" + user.age + "years old" + user.rollNumber + '<br>' + '<br>');
+        document.writeln("Hello" + "" + newUser.name + "you are" + newUser.age + "years old" + newUser.rollNumber + '<br>' + '<br>');
+        document.writeln("Hello" + "" + student.name + "you are" + "<br><br>" + student.age + "years old" + "<br>" + student.rollNumber + "<br>" + student.degree + '<br>' + '<br>');
+        document.write("<br>");
+    </script>
+<h3>new object</h3>
+    <script>
+        const newuser = new Object();//new keyword to create an obj
+        newuser.name = 'Alice';
+        newuser.age = 25;
+        newuser.rollNumber = 101;
+        document.writeln("Hello  " + " " + newuser.name + " you are " + newuser.age + " years old " + newuser.rollNumber + '<br>' + '<br>');
+    </script>
+<h3>Constructed function</h3>//it define framework of an object
+    <script>
+
+        function person(name, age) {//Obj is Person and the properties are name and age
+
+            this.name = name;// this represent the current object that is being created by the constructor function and it allows us to access the properties and methods of the object that is being created by the constructor function
+            this.age = age;
+    }
+        const p = new person("Roshan", 24);// createing an obj from existing obj by using constructor function
+        document.writeln("Hello  " + " " + p.name + " you are " + p.age + " years old " + '<br>' + '<br>');
+
+    </script>
+
+<h3>Nested Obj</h3>
+<script>
+const student1={
+    name:'Livika',
+    age :12,
+    address:{
+        city:'Banglore',
+        state:'karnataka',
+        pin :592001,
+    }
+}
+document.writeln(    `Hello ${student1.name} you are ${student1.age} years old and you live in ${student1.address.city} in ${student1.address.state} with pin code ${student1.address.pin}` + '<br>' + '<br>');//since discount price  is having a space we need to use bracket notation to access the discount price property of the product object
+
+    </script>
+    <h3>[Bracket] Notation </h3>
+<script>
+const cart={
+laptop:50000,
+'company name':'dell','delivery time':'2 days',
+rating:{
+    stars:4.5,
+    count:87        
+}
+}
+document.writeln(`The cart item is${cart['company name']} and the price is${cart.laptop} and dilivary time is ${cart['delivery time']} and its rating is ${
+cart['rating'].stars} `)
+
+    </script>
+        <h3>CRUD Operations -Add</h3> add one more property
+<script>
+const cart2={
+    item:'Laptop',
+    price:60000,
+    quantity:1
+}
+cart2.color='black';// add new property to the cart2 object obj.newprop
+document.writeln(`The cart item is ${cart2.item} and the price is ${cart2.price} and quantity is ${cart2.quantity} and color is ${cart2.color}`)//dispaly value
+document.write("<br>");
+console.log(cart2);
+
+    </script>
+           <h3>CRUD Operations -update</h3> update the existing value of the property
+<script>
+const cart3={
+    item:'Laptop',
+    price:60000,
+    quantity:1
+}
+cart3.quantity=3;
+document.writeln(`Updated cart quantity: ${cart3['quantity']}`);
+document.write("<br>");
+console.log(`Updated cart quantity: ${cart3['quantity']}`);
+
+    </script>
+ 
+           <h3>CRUD Operations -delete</h3>
+           <script>
+const cart4={
+    item:'Laptop',
+    price:60000,
+    quantity:1,color:'black'
+}
+console.log(`delete ${delete cart4.color}`);
+delete cart4.color;
+
+console.log(cart4.color); // undefined
+document.writeln(`Deleted color property: ${ cart4['color']}`);
+document.write("<br>");
+
+    </script>
+        <h3>Use of object method</h3>
+           <script>
+const cart5={
+    item:'Laptop',
+    price:60000,
+    quantity:1,color:'black'
+}
+document.writeln(Object.keys(cart5) + "<br>"); // ['item', 'price', 'quantity', 'color'] //to dispaly the keys/property names of the cart5 object we use this methods
+document.writeln(Object.values(cart5) + "<br>"); // ['Laptop', 600  00, 1, 'black']// display the values of the properties of the cart5 object we use this method
+document.writeln(Object.entries(cart5) + "<br>"); // [['item', 'Laptop'], ['price', 60000], ['quantity', 1], ['color', 'black']]       //to display everythimg in the form of key value pair we use this method 
+console.log(Object.keys(cart5)); // ['item', 'price', 'quantity', 'color']
+console.log(Object.values(cart5)); // ['Laptop', 60000, 1, 'black']     
+console.log(Object.entries(cart5)); // [['item', 'Laptop'], ['price', 60000], ['quantity', 1], ['color', 'black']]q   
+
+
+document.write("<br>");
+
+    </script>
+      <h3>Shorthand property</h3>
+           <script>
+let name='Lalo';
+let age=30;
+const person1={name,age};// since the property name and variable name are same we can use shorthand property to create an object with the same name as the variable name
+document.writeln(`Hello ${person1.name} you are ${person1.age} years old`),
+document.write(JSON.stringify(person1));// to convert the person1 object into a JSON string we use this method and it will return a string representation of the person1 object in JSON format
+// Console.log(person1);
+document.write("<br>");
+
+    </script>
+       <h3>Computed Property Names</h3>
+           <script>
+const keyName='email';
+const user1={
+[keyName]:'nil@example.com',
+}
+console.log(user1.email)
+
+
+    </script>
+</body>
+
+</html>

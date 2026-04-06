@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simulation of car</title>
+    <style>
+        body {
+            background-image: url('image.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        #myimg {
+            position: absolute;
+            left: 0;
+            top: 60%;
+            width: 300px;
+        }
+
+        .controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="color: white; text-align:center;">
+        Please Use the navigation button
+    </h1>
+
+    <div class="controls">
+        <button onclick="start()">Start</button>
+        <button onclick="stop()">Stop</button>
+        <button onclick="reverse()">Reverse</button>
+        <button onclick="init()">Restart</button>
+    </div>
+
+    <img id="myimg" src="car3.png" />
+
+    <script>
+        var animation;
+        var img;
+
+        function init() {
+            img = document.getElementById('myimg');
+            img.style.left = '0px';
+        }
+
+        window.onload = init;
+
+        function start() {
+            img.style.left = parseInt(img.style.left) + 10 + 'px';
+            animation = setTimeout(start, 50);
+        }
+
+        function stop() {
+            clearTimeout(animation);
+        }
+
+        function reverse() {
+            img.style.left = parseInt(img.style.left) - 10 + 'px';
+            animation = setTimeout(reverse, 50);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Boolean</title>
+</head>
+
+<body>
+<section>
+    <button onclick="generateOtp()">Generate OTP</button>
+    <input type="text" id="otpInput" placeholder="Enter OTP">
+    <button onclick="verifyOtp()">Verify OTP</button>
+</section>
+     
+    <script>
+        let a = "Layal";
+        if (a == "Layal") {
+            document.write("a is equal to Layal");
+            console.log("a is equal to Layal");
+        } else {
+            console.log("a is not equal to Layal");
+        }
+        let userInput = prompt("Please enter your age:");
+        let age = Number(userInput);
+        if (age >= 18) {
+            document.write("You are eligible to vote.");
+        } else {
+            document.write("You are not eligible to vote.");
+        }
+        document.write("<br>");
+        var size = "XL";
+        if (size === "S") {
+            console.log("Small size");
+            document.write("Small size");
+        } else if (size === "M") {
+            console.log("Medium size");
+            document.write("Medium size");
+        } else if (size === "L") {
+            console.log("Large size");
+            document.write("Large size");
+
+        } else if (size === "XL") {
+            console.log("Extra Large size");
+            document.write("Extra Large size");
+        } else if (size === "XXL") {
+            console.log("Double Extra Large size");
+            document.write("Double Extra Large size");
+        }
+        else {
+            console.log("Size not available");
+        } document.write("<br>");
+        var vowel = "K";
+        if (vowel == "A" || vowel == "E" || vowel == "I" || vowel == "O" || vowel == "U") {
+            console.log("The letter is a vowel");
+
+            document.write("\nThe letter is a vowel");
+        } else {
+            console.log("The letter is not a vowel");
+            document.write("\nThe letter is not a vowel");
+        }
+        document.write("<br>", "<br>");
+
+        let fruit = "apple";
+        let total = 0;
+        let qnt = 5;
+        if (fruit == "apple") {
+            document.write("total price is " + (total = qnt * 100));
+        } else if (fruit == "banana") {
+            document.write("total price is " + (total = qnt * 60));
+        } else if (fruit == "orange") {
+            document.write("total price is " + (total = qnt * 300));
+        }
+        else {
+            document.write("fruit not available");
+        }
+
+        document.write("<br>", "<br>");
+        let number = -1;
+        if (number > 0) {
+            console.log("The number is positive");
+            document.write("The number is positive");
+        } else if (number < 0) {
+            console.log("The number is negative");
+            document.write("The number is negative");
+        } else {
+            console.log("The number is zero");
+            document.write("The number is zero");
+        }
+        document.write("<br>", "<br>");
+        let otp_number = 1234;
+        let user_input_otp = prompt("Enter your OTP:");
+        let input_otp = Number(user_input_otp);
+        if (input_otp == otp_number) {
+            console.log("Your OTP verifird successfully");
+            document.write("Your OTP verifird successfully");
+        } else {
+            console.log("Invalid OTP. Please try again.");
+            document.write("Invalid OTP. Please try again.");
+        }
+        document.write("<br>", "<br>");
+        let user_location = "kerala";
+        let user_age = 2;
+        if (user_age > 18) {
+            if (user_location == "kerala") {
+                console.log("You are eligible for the offer in Kerala");
+                document.write("You are eligible for the offer in Kerala");
+            } else {
+                console.log("You are not eligible for the offer in Kerala");
+                document.write("You are not eligible for the offer in Kerala");
+            }
+        } else {
+            console.log("You are not eligible for the offer due to age restriction");
+            document.write("You are not eligible for the offer due to age restriction");
+        }
+ let generatedOtp = 0; // ✅ global variable
+
+function generateOtp() {
+    generatedOtp = Math.floor(1000 + Math.random() * 9000);
+    console.log("Generated OTP:", generatedOtp);
+}
+
+function verifyOtp() {
+    const userInput = document.getElementById("otpInput").value;
+
+    if (Number(userInput) === generatedOtp) {
+        alert("OTP verified successfully!");
+    } else {
+        alert("Invalid OTP. Please try again.");
+    }
+}
+
+    </script>
+</body>
+
+</html>

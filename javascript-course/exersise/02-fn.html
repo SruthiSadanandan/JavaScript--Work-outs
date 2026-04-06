@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hour</title>
+</head>
+<script>
+function great(name){
+    console.log(`hello ${name}`);
+}
+function functionConvertToFaren(celcius){
+    let result=(celcius*9/5)+32;
+    console.log(result);
+    return result;
+}
+function convertLength(length,from,to){
+    if(from===to){
+        return lenth+""+to;
+    }
+    if(from==="km"&& to==="miles"){
+      return result= length*1.6+"km";
+      console.log(result);
+    }
+}
+
+
+</script>
+
+<body>
+ 
+<button onclick="great()">Time</button>
+<button onclick="functionConvertToFaren(25)">Discount</button>
+<button onclick="console.log(convertLength(5,'km','miles'))">Length Conversion</button>
+
+</body>
+
+</html>

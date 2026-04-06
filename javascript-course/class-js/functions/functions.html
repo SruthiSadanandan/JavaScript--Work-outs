@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Function</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h3>Functions</h3>
+    <script>
+        function greet(name) {
+            document.write('hello  ' + '' + name + '!')
+
+            console.log('hello  ' + '' + name + '!');
+        }
+        greet('Neena')
+    </script>
+    <h3>String Method to uppercase</h3>
+    <script>
+        let text = "      javascript                tutorial \n";
+        document.write(text.toUpperCase() + "<br>"); //adhar card name to uppercase
+
+        document.write(text.toLowerCase());
+
+
+
+    </script>
+    <h3>String trimmimg</h3>
+    <script>
+        var s1 = "javascript  tutorial  new page\n";
+        var s2 = s1.trim();//emailid trim
+        document.write(s2 + "<br>");
+
+
+
+
+    </script>
+    <h3>Math Method</h3>
+    <script>
+        document.write(Math.PI + '<br>' + '<br>');
+        document.write(Math.max(1, 2, 3, 4, 10) + '<br>' + '<br>');// max item counting during purchasing
+        document.write(Math.random());//otp
+
+
+
+
+    </script>
+    <h3>Date Method</h3>
+    <script>
+        var date = new Date();
+        document.writeln("current date  " + date.getHours() + '<br>' + '<br>')
+        document.writeln("current min  " + date.getMinutes() + '<br>' + '<br>')
+        document.writeln("current sec  " + date.getMilliseconds() + '<br>' + '<br>')
+        document.writeln("current month  " + (date.getMonth() + 1) + '<br>' + '<br>')
+        document.writeln("current date  " + date.getDate() + '<br>' + '<br>')
+        document.writeln("current date  " + date + '<br>' + '<br>')
+
+
+
+
+    </script>
+    <h3>Array Method</h3>
+    <script>
+        let array = [1, 2, 3];
+        array.push(4);// insert to lastst
+        document.writeln(array + '<br>');
+        array.pop();//remove last number
+        document.writeln(array);
+        let nums = [1, 2, 3];
+        let squares = nums.map(num => num * num);//abc to 123
+        document.writeln(squares);
+
+
+
+
+    </script>
+    <h3>Pure Fn</h3>//same input same op
+    <script>
+        function income(salary) {
+            document.writeln(`Salary : ${salary * 2}`);
+
+        }
+
+        income(75000)
+
+
+    </script>
+
+    <h3>Impure Fn</h3>//same input different op
+    <script>
+        let increment = 4000;
+        function updatedIncome(salary) {
+            document.writeln(`Salary : ${salary * 2 + increment}`);
+
+        }
+
+        updatedIncome(75000)
+
+
+    </script>
+    <h3>First class Fn</h3> //fn can be assign to var
+    <script>
+
+        const newGreet = function (name) {
+            document.writeln("hello " + name);
+        };
+        newGreet('Loyal')
+
+    </script>
+
+    <h3>Higher order Fn</h3>//function can be used as argument
+    <script>
+
+        function repeat(action, times) {
+            for (let i = 0; i < times; i++) {
+                action();
+            }
+        }
+        function sayHello() {
+            document.writeln("hello"); +
+                console.log("hello");
+        }
+        repeat(sayHello, 3);
+
+    </script>
+
+    <script>//Function Declaration using template literal (${})= expression inside the string
+        function newfn(name) {
+            return `Hello ${name}`;
+        }
+        console.log(newfn("Nik"));
+    </script>
+
+    <h3>Function Expression </h3>//use arithmatic expression inside the template string
+    <script>
+        let num1 = 40;
+        let num2 = 70;
+
+        let result = `There are 2 values ${num1} and ${num2} and their sum is ${num1 + num2}.`;
+
+        document.write(result);
+    </script>
+
+    <h3>Arrow Expression </h3>// reduce the code and make it more concise remove the function keyword and use => instead of return remove the curly braces if the function body contains only a single expression remove the parentheses around the parameter if there is only one parameter
+    <script>
+        const newfunction = (age) => `your age is ${age}`;
+        document.writeln(newfunction(18));
+        console.log(newfunction(14));
+    </script>
+    <h3>Default Parameter</h3>//defualt value for parameter if no argument is provided or if the argument is undefined
+    <script>function function2(name = 'Lil') {
+            return `Hello ${name}`;
+        }
+        document.writeln(function2());
+    </script>
+    <h3>Anonymous function</h3>//without fn name but can be called immediately but without use paranthasis( outside the entire fn)    <script>
+        (function () {
+            console.log("Welcome back");
+        })();
+
+
+    </script>
+    <h3>Math.toFixed</h3>//
+    <script>
+        let num = 123.456;
+        console.log(num.toFixed(2));
+        document.writeln(num.toFixed(2));
+
+
+    </script>
+    <h3>Math.precision</h3>
+    <script>
+        let number1 = 123.456;
+        console.log(number1.toPrecision(4));
+        document.writeln(number1.toPrecision(4));
+
+
+    </script>
+    <h3>Math.round</h3>// round to the nearest integer if the decimal part is greater than or equal to 0.5, it rounds up to the next integer otherwise it rounds down to the previous integer   
+    <script>
+        let number2 = 123.956;
+        console.log(Math.round(number2));
+        document.writeln(Math.round(number2));
+
+
+    </script>
+    <h3>Math.floor</h3> //round down to the nearest integer if the decimal part is greater than or equal to 0.5, it rounds up to the next integer otherwise it rounds down to the previous integer
+    <script>
+        let number3 = 122.856;
+        console.log(Math.floor(number3));
+        document.writeln(Math.floor(number3));
+
+
+    </script>
+    <h3>Math.ceil</h3>// round up to the nearest integer if the decimal part is greater than 0, it rounds up to the next integer otherwise it remains the same
+    <script>
+        let number4 = 123.456;
+        console.log(Math.ceil(number4));
+        document.writeln(Math.ceil(number4));
+
+
+    </script>
+    <h3>Find the distance</h3>
+   <script>
+    //to find  the user going to travel,we need declare the var for receive the input  based on the selction
+    const walk = 3;
+    const bike = 60;
+    const car = 80;
+//starting point and destination point lat and long in the map, lat is N_>S long is W_>E(find the distance between two points using the haversine formula)
+    var lat1 = 18.943889;
+    var lon1 = 72.835991;
+    var lat2 = 19.218330;
+    var lon2 = 72.978088;
+
+    function calculateDistance() {
+        //conv to degree to radian (gmap use radiance) formula: distance = acos(sin(lat1) * sin(lat2) + cos(lat1) * cos(lat2) * cos(lon2 - lon1)) * radius of the earth (6371 km) because the distance is in km and the radius of the earth is in km sin and cos accept only rad values so we need to convert the lat and long from degree to radian by multiplying the degree value by (Math.PI / 180) because there are 180 degrees in a circle and Math.PI is the value of pi in JavaScript
+        var lat1Rad = lat1 * Math.PI / 180;
+        var lon1Rad = lon1 * Math.PI / 180;
+        var lat2Rad = lat2 * Math.PI / 180;
+        var lon2Rad = lon2 * Math.PI / 180;
+//haversine formula to calculate the distance between two points on the surface of a sphere given their latitudes and longitudes
+        var dist = Math.acos(
+            Math.sin(lat1Rad) * Math.sin(lat2Rad) +
+            Math.cos(lat1Rad) * Math.cos(lat2Rad) *
+            Math.cos(lon2Rad - lon1Rad)
+        ) * 6371;
+
+        return dist;
+    }
+
+    var distance = calculateDistance();// callin fn this dispalys distance
+console.log("Distance: " + distance + " km");//exact distance this op
+    console.log(distance.toFixed(2) + " km");//to make it readable
+
+    var mode = prompt("Select the mode: \n1.walk \n2.Bike \n3.Car");
+    var time;
+//t o get the user input we use prompt
+    if (mode == '1') {
+        time = distance / walk;//walk  to find time taken walk
+    } else if (mode == '2') {
+        time = distance / bike;//bike to find time taken bike
+    } else if (mode == '3') {
+        time = distance / car;//    
+    }
+
+    console.log(time);
+//the result we got in hours but we want to convert it to min if the time is less than 1 hour.time calcu  into hrs to min
+    if (time < 1) {
+        console.log("time: " + (time * 60).toFixed(2) + " Min");// time  12 am to 1am is 1 hr but time 12 am to 12:30 am is 0.5 hr so we need to convert it to min by multiplying the time by 60 because there are 60 min in an hour
+    } else {// not min but hr
+        console.log("time: " + time.toFixed(2) + " Hrs");
+    }
+</script>
+
+
+</body>
+
+</html>

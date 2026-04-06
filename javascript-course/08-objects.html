@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Objects
+
+        </title>
+    </head>
+        <body>
+
+          <script>
+    //    const products={name:'din',
+    //     price:100
+    //    };
+    //    console.log(products);
+    //      console.log(products.name);
+    //      products.name='lin';
+    //      console.log(products);
+    //      products.newProperty=true;
+    //      console.log(products);
+    //      delete products.newProperty;
+    //      console.log(products);
+    const products2={
+        name:'shirt',
+        ['delivery-time']:'1 day',
+        rating:{
+            stars:4.5,
+            count:87
+        },
+        fun:function fn1(){
+            console.log('fn inside obj')
+        }
+
+    }
+    console.log(products2['name']);
+    // console.log(products2.);
+    console.log(products2['delivery-time']);
+ console.log(products2.rating.count);
+ console.log(products2.fun());
+       console.log(products2['rating']['stars']);
+       console.log(typeof console.log);
+       
+    console.log( JSON.stringify(products2));
+    const jsonString=Json.stringify(products2)
+    JSON.pa
+        </script>  
+        </body>
+    </html>

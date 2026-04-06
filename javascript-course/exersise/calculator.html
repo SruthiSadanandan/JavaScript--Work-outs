@@ -1,0 +1,132 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+</head>
+<style>
+   
+        .outer {
+            display: grid;
+            grid-template-columns: repeat(4, 80px);
+            gap: 5px;
+            width: max-content;
+        }
+        input {
+            grid-column: span 4;
+            height: 40px;
+            font-size: 20px;
+            text-align: right;
+        }
+        button {
+            height: 50px;
+            font-size: 18px;
+        }
+</style>
+<script>
+function appendValue(value){
+    document.getElementById('display').value+=value;
+}
+function clearValue(value){
+    document.getElementById('display').value='';
+}
+
+
+
+</script>
+
+<body>
+ <div class="outer">
+    <input type="text" id="display" displayed>
+    <button onclick="great()">1</button>
+<button onclick="functionConvertToFaren(25)">2</button>
+<button onclick="console.log(convertLength(5,'km','miles'))">3</button>
+<button onclick="great()">4</button>
+<button onclick="functionConvertToFaren(25)">5</button>
+<button onclick="console.log(convertLength(5,'km','miles'))">6</button>
+<button onclick="great()">7</button>
+<button onclick="functionConvertToFaren(25)">8</button>
+<button onclick="console.log(convertLength(5,'km','miles'))">9</button>
+<button onclick="console.log(appendValue(6))">0</button>
+<button onclick="console.log(convertLength(5,'km','miles'))">+</button>
+<button onclick="console.log(convertLength(5,'km','miles'))">-</button>
+<button onclick="console.log(convertLength(5,'km','miles'))">*</button>
+<button onclick="console.log(convertLength(5,'km','miles'))">/</button>
+ </div>
+
+
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        .outer {
+            display: grid;
+            grid-template-columns: repeat(4, 80px);
+            gap: 5px;
+            width: max-content;
+        }
+        input {
+            grid-column: span 4;
+            height: 40px;
+            font-size: 20px;
+            text-align: right;
+        }
+        button {
+            height: 50px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="outer">
+    <input type="text" id="display" disabled>
+
+    <button onclick="appendValue('1')">1</button>
+    <button onclick="appendValue('2')">2</button>
+    <button onclick="appendValue('3')">3</button>
+    <button onclick="appendValue('+')">+</button>
+
+    <button onclick="appendValue('4')">4</button>
+    <button onclick="appendValue('5')">5</button>
+    <button onclick="appendValue('6')">6</button>
+    <button onclick="appendValue('-')">-</button>
+
+    <button onclick="appendValue('7')">7</button>
+    <button onclick="appendValue('8')">8</button>
+    <button onclick="appendValue('9')">9</button>
+    <button onclick="appendValue('*')">*</button>
+
+    <button onclick="appendValue('0')">0</button>
+    <button onclick="clearDisplay()">C</button>
+    <button onclick="calculate()">=</button>
+    <button onclick="appendValue('/')">/</button>
+</div>
+
+<script>
+    function appendValue(value) {
+        document.getElementById("display").value += value;
+    }
+
+    function clearDisplay() {
+        document.getElementById("display").value = "";
+    }
+
+    function calculate() {
+        try {
+            let result = eval(document.getElementById("display").value);
+     
+        } catch {
+            alert("Invalid Expression");
+        }
+    }
+</script>
+
+</body>
+</html>

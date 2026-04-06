@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hour</title>
+</head>
+<script>
+    let now=new Date();
+    let name='Tigu';
+console.log(now);
+let hour=now.getHours();
+console.log(hour)
+dispalyTime='';
+    function timeFunction(){
+if(hour>=6&& hour<=12){
+dispalyTime='Good Morning';
+}
+else if(hour>=13&& hour<=17){
+    dispalyTime='Good Evening'
+}else{
+    dispalyTime ='GoodNight'
+}
+alert(`Time:${dispalyTime } ${name}`);
+
+    }
+function discountFunction(){
+    let age=Number(prompt('Enter Your Age'));
+    let message='';
+    const holiday=true;
+    if(holiday&&(age <=6|| age>=65)){
+        message='Discount';
+        console.log(message);
+
+    }else{
+        message='no discount';
+
+    }
+    alert(`The person has ${message}`);                                                                                                                                     
+}
+
+
+</script>
+
+<body>
+ 
+<button onclick="timeFunction()">Time</button>
+<button onclick="discountFunction()">Discount</button>
+</body>
+
+</html>

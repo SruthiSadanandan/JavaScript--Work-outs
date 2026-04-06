@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> JsLoops
+
+    </title>
+</head>
+
+<body>
+<h3>
+    1.For Loop</h3> Defenition :most commonly used loops to repeat a block of code a certain number of times code a specific no of times
+   <h4> 
+    syntax:for(intialization;condition;increment/decrement){
+        //code to be executed
+
+    }
+    intialization:Run Once(start value)
+    Condition(checked before each itration)
+    Increment/Decrement:Run after each itration/update loop variable
+
+  <h5>ExampleEg:Crorepathi  the length of itration known.  </h5>  
+</h4>
+    <script> 
+    for(let i=1;i<=5;i++){//starts from 1 and runs until 5 and increment by 1/
+        document.write("Number " + i + "<br>");////to print it as a output we mentioned in dirctly.
+    }   
+    </script>
+    
+    <h3>While Loop</h3>The while loop executes the set of statements as long as the condition is true. It checks the condition before executing the loop body.If condition is false initially-loop won't run.
+   <h4> 
+    syntax:While(expression){
+        statement to be executed if expression is true
+    }
+
+
+      <h5>Example  Eg:Currency Evaluator   the length is unknown it will as long as it  is false, traffic signal</h5> 
+
+</h4>
+    <script> 
+let i=1;// creating the condition
+while(i<=5){//check the condion 
+    document.write("Number " + i + "<br>"); //value printwed one by one
+}
+
+ 
+    </script>
+
+        
+    <h3> do-while Loop</h3>Execcute atleast 1 time even if the condition is false. It checks the condition after executing the loop body. If condition is false initially-loop will run once.
+   <h4> 
+while-condition false ,doesnot  run
+do-while=>run once -execute at least once even if the condition is false
+    syntax:do{
+        statement is to be executed;
+        increment;
+
+    }while(expression){
+Example OTT platform -where 1 st episode will run before we suscribe
+    }
+
+
+</h4>
+    <script> 
+let k=1;//creating the var
+do{// do execute the code atleast once
+    document.write("Number " + k + "<br>");//print the statement
+    k++;// if the condiotion is true it will increment
+
+}while(k<=5);    // check the condition           
+
+ 
+    </script>
+
+
+
+<h3>
+    1.For-in loop</h3> The for -in loop through object properties. It iterates over the enumerable properties of an object, including inherited enumerable properties. It is commonly used to loop through the properties of an object or the elements of an array. 
+    In each itration  one prop from  objext is assigned  to a variable name and this loop continue  till  all the prop of the object are executed.
+
+    all the prop of the object are exhusted.
+   <h4> 
+    syntax:for(variabke name in object){
+        statement to be executed
+        //code to be executed
+
+    }
+    
+
+  <h5>  </h5>  
+</h4>
+    <script> 
+   const student={// creating the obj
+    name:Rahul,
+    age:20,Course:"ECE"
+   };
+   for(let key in student){// applying for-in loop condition (assigning the prop of the object  to a variable)
+    document.write(key + ": " + student[key] + "<br>");// receiving the prop and dispalying it 
+   } 
+   var aProperty;//create a var
+   for(aProperty in navigator){// assign the var to the obj called navigator
+    document.write(aProperty + "<br>");// to display all the prop of the object
+   }
+    </script>
+    
+</body>
+
+</html>
