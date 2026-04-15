@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Screen object</h3>
+    <script>
+        document.write("<br>Screen.width : " + screen.width);
+        document.write("<br>Screen.height :" + screen.height);
+        document.write("<br>Screen.availHeight :" + screen.availHeight);
+        document.write("<br>Screen.availWidth :" + screen.availWidth);
+        document.write("<br>Screen.colorDepth :" + screen.colorDepth);
+        document.write("<br>Screen.pixelDepth :" + screen.pixelDepth);
+    </script>
+
+    <h3>Console method</h3>
+    <script>
+        console.log("This is a log message"); //logs general message
+        console.error("This is error message");     //logs error
+        console.warn("This is a warning message"); //logs warnings
+        // console.clear("This is a clear message");  //clear console
+    </script>
+
+    <h3>Location object</h3>
+    <script>
+        document.write(location.href); //url
+    </script>
+
+    <h3>Website domain </h3>
+    <script>
+        document.write(location.hostname);  //port
+    </script>
+
+    <h3>Page path </h3>
+    <script>
+        document.write(location.pathname); //page path
+    </script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>History Object</title>
+</head>
+<!-- <body> -->
+
+    <h3>History Object</h3>
+
+    <input type="button" value="Go Back" onclick="goback()" />
+
+    <script>
+        function goback() {
+            history.back();
+        }
+    </script>
+
+    <h4>Home page</h4>
+    <a href="Home.html">Go to Home</a>
+
+    <h3>Product page</h3>
+    <a href="product.html">Go to Product</a>
+
+    <h3>Mobile page</h3>
+    <a href="mobile.html">Go to Mobile</a>
+
+    <br><br>
+
+    <button onclick="goForward()">Forward</button>
+    <button onclick="goBack()">Back</button>
+    <button onclick="goTwoSteps()">Go -2</button>
+
+    <script>
+        function goBack() {
+            history.back(); 
+        }
+
+        function goForward() {
+            history.forward(); 
+        }
+
+        function goTwoSteps() {
+            history.go(-2); 
+        }
+    </script>
+
+    <h3>Length of the History</h3>
+    <p id="demo"></p>
+
+    <script>
+        let length = window.history.length;
+        document.getElementById("demo").innerHTML = length;
+    </script>
+
+ <h3>Set Timout -otp verification method</h3>
+ <button onclick="sendOTP()">Sent OTP</button>
+    <p id="msg"></p>
+
+    <script>
+        function sendOTP(){
+       document.getElementById("msg").innerText='Sending OTP...';
+        setTimeout(() => {//only one time
+          document.getElementById("msg").innerText="OTP sent"  
+        }, 3000);
+        }
+
+
+    </script>
+   
+    <p >New Notification:<span id="count"></span>0</p>
+    <script>
+let count=0;// intial value
+setInterval(() => {//method
+    count++;
+    document.getElementById("count").innerText=count
+}, 1000);// in stock exchange it is used.updated in intervels,1s in every method
+
+
+    </script>
+<!-- </body>
+</html>
+
+</body>
+
+</html>

@@ -64,7 +64,7 @@ for(i=0;i<numbers.length;i++){
 }
 console.log(typeof numbers);// to find the type of the variable
     </script>
-    <h3>for Each loop</h3>
+    <h3>for Each loop</h3>//take ech  element of the array and process or execute the statement for each element of the array
     <script>
 let number=[10,20,30];//array literal
 number.forEach(num=>{
@@ -75,7 +75,7 @@ number.forEach(num=>{
      <h3>for ...of()</h3>
     <script>
 let number1=[11,21,31];
-for(let num of number1){
+for(let num of number1){//for ..of loop mainly to fetch all the  elements of the array one by one and print it (like objects)
        document.write(num + '<br>');
     console.log(num);
 }
@@ -85,7 +85,7 @@ for(let num of number1){
 
 
 
-    --------------------------------------------------------------------------------------------------------------------------------------
+    <!-- --------------------------------------------------------------------------------------------------------------------------------------
     <h3>
     1.For Loop</h3> Defenition :most commonly used loops to repeat a block of code a certain number of times code a specific no of times
    <h4> 
@@ -175,8 +175,196 @@ do{
    for(let key in student){
     document.write(key + ": " + student[key] + "<br>"); 
    } 
-    </script>
+    </script> -->
     
+      <h5>Array Splicing (index,count,item) </h5> //remove and replace the elemnt from the array and return the removed element replace is not compalsary 
+<!-- </h4> -->
+    <script> 
+  let allOrders=['laptop','mobile','tablet','tv'];
+  allOrders.splice(1,1,'pen');// [laptop,tablet,tv]
+  
+  
+  document.write(allOrders);
+    </script>
+        <h5>Array Concat (index,count,item) </h5>  //concatenate two or more arrays and return a new array without modifying the original arrays
+<!-- </h4> -->
+    <script> 
+  let allOrders1=['laptop','mobile','tablet','tv'];
+    let newOrders1=['laptop','mobile','tablet','tv'];
+  allOrders.concat(newOrders1);// [laptop,tablet,tv]
+  
+  
+    </script>
+
+            <h5>Array Sorting () </h5>
+<!-- </h4> -->//  sort array elements in ascending order
+    <script> 
+  let allOrders2=['laptop','mobile','tablet','tv'];
+allOrders2.sort();
+document.write(allOrders2);
+  
+  
+
+
+    </script>
+        <h5>Array reverese () </h5>
+        <!-- //  sort array elements in reverse order -->
+<!-- </h4> -->
+    <script> 
+  let allOrders3=['laptop','mobile','tablet','tv','all',];//[all,laptop,mobile,tv,tablet]
+
+document.write(allOrders3.reverse());
+  
+  
+    </script>
+       <h5>Array sort and Reverse () </h5>
+        <!-- //  sort  and reverse array elements in descending order -->
+<!-- </h4> -->
+    <script> //modify the original array and return the sorted array
+  let allOrders4=['laptop','mobile','tablet','tv','all',];
+  let orders=allOrders4.sort()//[all,laptop,mobile,tv,tablet]
+document.write(orders.reverse());//[tablet,tv,mobile,laptop,all]
+  
+  
+    </script>
+       <h5>Array slice () </h5>
+        <!-- //  slice the required elements alone using slice(start,end) -->
+<!-- </h4> -->
+    <script> 
+  let allOrders6=['laptop','mobile','tablet','tv',];
+  let order=allOrders6.slice(1,3)//mobile,tablet
+document.write(order);
+  
+  
+    </script>
+           <h5>Array Pop () </h5>
+        <!-- //  removes the last element from an array and returns that element. This method changes the length of the array. -->
+<!-- </h4> -->
+    <script> 
+  let allOrders8=['laptop','mobile','tablet','tv',];
+document.write(allOrders8.pop()+'<br>');//tv removed
+document.write(allOrders8);//['laptop','mobile','tablet',];
+
+  
+  
+    </script>
+      <h5>Array shift () </h5>
+        <!-- //  removes the first element from an array and returns that element. This method changes the length of the array. -->
+<!-- </h4> -->
+    <script> 
+  let allOrders7=['laptop','mobile','tablet','tv',];
+document.write(allOrders7.shift()+'<br>');
+document.write(allOrders7);
+
+
+  
+  
+    </script>\
+        <h5>Array Indexof () </h5>
+        <!-- // return the index of the element or -1 not found -->
+<!-- </h4> -->
+    <script> 
+  let allOrders9=['laptop','mobile','tablet','tv',];
+document.write(allOrders9.indexOf('mobile')+'<br>');//1
+document.write(allOrders9.indexOf('car')+'<br>');//-1 not found
+
+
+  
+  
+    </script>
+       <h5>Array join(-/',')/separator </h5>
+        <!-- //join into the array by converting into a single string using a separator -->
+<!-- </h4> -->
+    <script> 
+  let allOrders10=['laptop','mobile','tablet','tv',];
+document.write(allOrders10.join(' - ')+'<br>');//laptop - mobile - tablet - tv
+document.write(typeof(allOrders10));//string
+
+
+
+  
+  
+    </script>
+       <h5>Array deletes </h5>
+        <!-- //Delete a particular value using  index value and the array will have empty space -->
+<!-- </h4> -->
+    <script> 
+  let allOrders11=['laptop','mobile','tablet','tv',];
+document.write(delete allOrders11[2]+'<br>');//laptop - mobile - tablet - tv
+document.write((allOrders11));///laptop,mobile,,tv
+
+
+
+  
+  
+    </script>
+         <h5>map() </h5>
+        <!-- //
+<!-- </h4> -->
+    <script> 
+  let allOrders12=['laptop','mobile','tablet','tv',];
+let mappedOrders=allOrders12.map(item=>item.toUpperCase());
+document.write(mappedOrders);//LAPTOP,MOBILE,TABLET,TV
+
+
+
+  
+  
+    </script>
+          <h5>filter() </h5>
+        <!-- //
+<!-- </h4> -->
+    <script> 
+  let allOrders13=['laptop','mobile','tablet','tv','Keyboard','Mouse'];
+let filterOrders=allOrders13.filter(n=>n.length>5);//filter the element whose length is greater than 5
+document.write(filterOrders)//laptop,mobile,tablet,Keyboard
+;
+
+  
+  
+    </script>
+           <h5>Reduce() </h5>
+        <!-- //
+<!-- </h4> -->
+    <script> 
+  let allOrders14=['laptop','mobile','tablet','tv','Keyboard','Mouse'];
+let reduceOrders=allOrders14.reduce((sum,item)=>sum+item.length,0);//reduce the array to a single value
+document.write(reduceOrders)//33
+;
+
+  
+  
+    </script>
+
+        <h5>Spread Operator </h5>
+        <!-- //we used to convert into values using loops inside the array and it will return a new array without modifying the original array -->
+        <!-- //Spread operator is used to expand the elements of an array or object into individual elements. It is denoted by three dots (...) and can be used in various contexts, such as function calls, array literals, and object literals. -->
+    <script> 
+    let allOrders15=['laptop','mobile','tablet','tv','Keyboard','Mouse'];
+    let copyOrders=[...allOrders15];//copy the array using spread operator//convert all the array elements into individual values and sorting it 
+    document.write(copyOrders);//laptop,mobile,tablet,tv,Keyboard,Mouse 
+    </script>
+
+      <h5>Rest Operator </h5>
+        <!-- //Rest operator is used to collect multiple elements into an array. It is denoted by three dots (...) and can be used in various contexts, such as function parameters and array literals. -->
+    <script> 
+    let allOrders16=['laptop','mobile','tablet','tv','Keyboard','Mouse'];
+  let [firstOrder,... remainingOrders]=allOrders16;//rest operator to collect the remaining elements into an array
+  document.write(firstOrder+'<br>');//laptop
+  document.write(remainingOrders);//mobile,tablet,tv,Keyboard,Mouse
+    </script>
+
+    <h5>Array  Destructuring </h5>
+   <script>
+         let numbs=[1,2,3,4,5];
+        let[a,b,c,d,e]=numbs;//array destructuring to assign the values of the array to individual variables
+        document.write(a+'<br>');//
+                document.write(b+'<br>');//
+                        document.write(c+'<br>');//
+                           
+
+   </script>
+    </script>
 </body>
 
 </html>

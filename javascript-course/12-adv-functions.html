@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Advanced Functions
+
+    </title>
+</head>
+
+<body>
+    <button onclick="" class="js-button">Click</button>
+    <script>
+      const buttonElemet=  document.querySelector('.js-button');
+    //   buttonElemet.addEventListener('click',()=>{
+    //     console.log('click');
+    //   });
+      const eventListener=()=>{console.log('click')}
+      buttonElemet.removeEventListener('click',()=>{
+        console.log('click');})
+       buttonElemet.addEventListener('click',()=>{
+        console.log('click4');
+      });
+      
+// function greeting(){
+//     console.log('hello');
+// }
+// greeting();
+// function1=function greet(){
+// console.log('lil');
+// }
+// function1();// fn declaration
+// console.log(typeof(function1));
+// function2=function(){
+//     console.log('hihi');
+// }
+// function2();
+// const object={
+//     num:2,
+//     fun:function gree(){
+//         console.log('helooooooo');
+
+//     }
+// }
+// object.fun();
+// function run(param){
+// param();}
+// run(function(){//call back
+//     console.log('heeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeello');
+// });
+// setTimeout(function(){
+//     console.log('timout');// inside fn is synchrounous
+// },3000);
+// console.log('dfgvegrwt');
+// setInterval(function(){
+//     console.log('interval')
+// },3000);
+/*['make dinner','add playlist','watch youtube'].forEach((value,index)=>{
+    if(value==='make dinner'){
+        return;
+
+    }
+    console.log(value);
+    console.log(index);
+});
+const regularFn=function(param){
+    console.log('hello');
+    document.write('j')
+    return 5
+
+}
+regularFn();
+const arroFunction=(param)=>{
+    console.log('hellooooooooooooooooooooooooooooooooooo');
+    return 5;
+};
+arroFunction();
+const oneParam=param=>{
+    console.log(param+5);
+}
+// oneLine=()=>{
+//     console.log('desgyhuioAJ' );
+//     return 2+3
+// }
+oneLine=()=>10+3;
+oneParam(5);
+oneLine();
+console.log(oneLine());
+*/
+
+console.log([1,-3,5,8,7].filter((value,index)=>{
+    return value>=0;
+    // if(value>=0){
+    //     return true;
+    // }else{
+    //     return false;
+    // }
+}));
+console.log([1,4,6,9].map((value,index)=>{
+    return value+10;
+}));
+console.log([1,4,6,9].map(value=> value*2));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dom Projects
+
+    </title>
+    <style>
+          body{
+        font-family: Arial;
+    }
+     .subscribe-button{
+        border:none;
+        border-radius: 50px;
+        background-color: black;
+        color:white;
+        padding-top:10px;
+        padding-bottom:10px;
+        font-weight: bold;
+        padding-left: 20px; 
+        padding-right: 20px;
+        cursor: pointer;
+margin-bottom: 3px;
+     }
+     .is-subscribed{background-color: rgb(240, 240, 240);
+    color:black;}
+  .cost-input{
+    font-size: 15px;
+    /* padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px; */
+    padding:10px
+  }
+   .calcu-button{
+    background-color: green;
+    color: white;
+    font-size: 15px;
+    padding: 10px 50px;
+    border:none;
+cursor:poiner;
+
+   } 
+    </style>
+</head>
+
+<body>
+    <p>Youtube Subscribe</p>
+    <button onclick="
+subscribe();
+" class="js-suscribe-button subscribe-button">Subscribe</button>
+
+<p>Amazone Shipping Calculator</p>
+<input placeholder="Cost of Order" class="js-order-input cost-input" onkeydown="
+handleKeydown(event);
+" >
+<!-- <button onclick="calculateShipping()" onkeydown="console.log('typing...')">Calculate</button> -->
+ <button onclick="calculateShipping()" class="calcu-button">Calculate</button>
+<p class="js-cost"></p>
+    <script>
+        function subscribe() {
+            const buttonElement = document.querySelector('.js-suscribe-button')
+            if (buttonElement.innerText === 'Subscribe') {
+                buttonElement.innerHTML = 'Subscribed';
+                buttonElement.classList.add('is-subscribed');
+            } else {
+                buttonElement.innerHTML = 'Subscribe';
+                buttonElement.classList.remove('is-subscribed');
+            }
+        }
+        function calculateShipping(){
+            let orderInput=document.querySelector('.js-order-input');
+            let orderCost=Number(orderInput.value);
+            if(orderCost<40){
+                orderCost+=10;
+            }
+            document.querySelector('.js-cost').innerHTML=`Shipping Cost: $${orderCost}`;
+            // alert(`Shipping Cost: $${orderCost}`);
+        }
+        String(25)
+        console.log(String(25));
+        console.log('25'-5);
+        console.log('25'+5);
+        window.alert('Hello');
+        function handleKeydown(event){
+            console.log(event.key);
+     
+            if(event.key==='Enter'){
+                calculateShipping();
+            }
+        }
+    </script>
+</body>
+
+</html>

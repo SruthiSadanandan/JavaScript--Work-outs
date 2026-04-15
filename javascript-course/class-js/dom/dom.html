@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dom</title>
+
+    </head>
+    <body>
+       <div id="div1">
+  <h2 id="title">Heading 1</h2>
+  <p class="info">Para 1</p>
+  <h2>Heading</h2>
+  <p class="info">Para 2</p>
+</div>
+
+<h2>getElementById</h2>
+
+<script>
+function getCube() {//to get input and multiple no 3 times to get cube of number
+    var number = document.getElementById("number").value;// to recieve and store in the variabkle
+    alert(number * number * number);//output as an alertbox
+}
+</script>
+
+<form>
+  Enter No 
+  <input type="text" id="number" name="number">
+  <br><br>
+  <input type="button" value="Cube" onclick="getCube()"/>
+</form>
+<h2>getElementByNmae</h2>
+
+<script>
+function totalElemnts(){
+    var allGenders=document.getElementsByName("gender");// to store the value of the element byname
+    alert("Totla genders:"+allGenders.length);// to get the total length of gender
+}
+
+</script>
+
+<form>
+   Male: <input type="radio" name="gender" value="male">
+   Female: <input type="radio" name="gender" value="female">
+   <input type="button" value="Total gender" onclick="totalElemnts()"/>
+</form>
+<h2>getElementsByTagName</h2>
+
+<script>
+function countPara(){
+    var totalPara=document.getElementsByTagName("p");//storing the tag in the variable called total para
+    alert("Total p tags are:"+totalPara.length);//totla lenth of the tag
+
+}
+
+</script>
+
+<p>This is eg of P tag</p>
+ <p class="info">Para 1</p>
+  <h2>Heading</h2>
+  <p class="info">Para 2</p>
+  <p>This paragraph show the details</p>
+  <button onclick="countPara()">Count</button><!--calling function count para-->
+
+  <h2>getElementsByClassName</h2>
+<div class="class1">
+    This is a simple class implemented
+</div>
+<script>
+var x=document.getElementsByClassName("class1");
+document.write("on callng x,it will return a arraylike obj:<br>"+x);//print only the object
+
+
+</script>
+<h2>Example 2</h2>
+<p class="text">hello</p>
+<p class="text">World</p>
+<script>
+    const items=document.getElementsByClassName("text");// to get the class values
+    for(let i=0;i<items.length;i++){//since multiple values are  thrre we  use for loop function
+        console.log(items[i].textContent)//text content will shown even the text elemt also we used it in the console
+    }
+</script>
+ <h2>Queryselector</h2>
+<script>
+const elder=document.querySelector("p");//want to take the p tag
+document.write(elder.textContent);//only the first para tag content alone will get printed
+</script>
+<h3>Query Selector All</h3>
+<p class="texts">Hellooooooo</p>
+<p class="texts">WOOOOOOOOOOOOOOOOOOORLD</p>
+<script>
+    const itemi=document.querySelectorAll(".texts");//it will take all the class with texts
+    itemi.forEach(item=>{//it will take each class/element as an element as an individual elemet and run the function
+item.style.color="blue";
+    })
+</script>
+ <h2>Append child method</h2>
+ <ul id="list">
+    <li>Item 1</li>
+ </ul>
+<script>
+newItem=document.createElement("li")//ccreate the var to store the elemnt
+newItem.textContent="Item 2"
+const list=document.getElementById("list");
+list.appendChild(newItem)
+</script>
+ <h2>append()</h2>
+ <ul id="lists">
+    <li>Item 1</li>
+ </ul>
+<script>
+const lists=document.getElementById("lists");//create the element id
+
+const newItems=document.createElement("li");//storing the new elemnt in the new  variaable
+newItems.textContent="Item 3";//text content will make the content visible
+lists.append(newItems);//append the child(item 3) the parent to the existing list 
+</script>
+ <h2>innerText & textContent</h2>
+ <p id="test">Hi <span style="display:none"> Hidden </span> User </p>
+ 
+<script>
+ const el=document.getElementById('test');
+ document.write(el.innerText);//Hi User// hidden text not printed
+ document.write("<br>");
+ document.write(el.textContent);//Hi User//hidden text also visible
+</script>
+    </body>
+</html>
+
