@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+
+    </title>
+</head>
+
+<body>
+<h3>Promise</h3>
+    <script>
+
+const myPromise=new Promise((resolve,reject)=>{// Promise constructor ,which has the arguments for success 
+    let success=false;//simulate an operation
+    if(success){//if operation is 
+        resolve("operation succeeded");//print success
+    }else{
+        reject("operation failed")// print fail
+    }
+});
+//using the promise
+myPromise//to connect with constr with the error display the final output
+.then((result)=>{//  to receive the output and store it the result var
+    document.write(result);
+})
+.catch((error)=>{ //for error catching-exception handling
+
+ 
+    document.write(error)// catch the error ,operation failed
+})
+    </script>
+    <h3>Post API</h3>
+    <h4>It fetches from Api ,converet into json,display it it on the web page
+        Fetch API->Check response->convert json->display data->Handle the errors
+    </h4>
+    <pre id="output"></pre>
+    <script>
+fetch("https://jsonplaceholder.typicode.com/posts/3 ")//send an http GET method and it return the response
+.then((response)=>{//successful req 200-299 //store return the output
+    if(!response.ok){//error 404,500
+        throw new Error('Network error');//stop execution and jump to catch
+    }
+    return response.json(); // parse json // covert into json format
+
+})
+.then((data)=>{
+    console.log(data);
+    //stringify convert to string
+    document.getElementById('output').textContent=JSON.stringify(data,null,2);//object to convert,replacement,indentation// modify any content null mention
+}).catch((error)=console.log("error:"+error));//network fails API returns error //throw new error
+
+    </script>
+     <h3>Async & await</h3>
+    <!-- <h4>It fetches from Api ,converet into json,display it it on the web page
+        Fetch API->Check response->convert json->display data->Handle the errors
+    </h4> -->
+    <pre id="outputs"></pre>
+    <script>
+async function fetchUserData(userId){// fn works with async operation and allows use of await
+   try {
+     const response1 = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);//GET req
+    const user=await response1.json();// parsing response to json
+console.log(user);
+//  show result in browser
+document.getElementById('outputs').textContent=JSON.stringify(user,null,2);//object to converet,replacement,indendation 
+   } catch (error) {
+    console.log("Error:"+error);//throw error in  output
+    document.getElementById('outputs').textContent="Error"+ error.message;//error in browser
+   }
+}
+fetchUserData(4);//calling fn
+    </script>
+</body>
+
+</html>

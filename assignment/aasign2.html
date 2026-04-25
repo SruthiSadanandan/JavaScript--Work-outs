@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form</title>
+</head>
+
+<body>
+    <button id="clickbtn">Click</button>
+    <p id="date"></p>
+    <p id="time"></p>
+
+    <script>
+        function displayDate() {
+            const currentDate = new Date();
+            const dateP = document.getElementById("date");
+            const dateT = document.getElementById("time");
+
+            dateP.textContent = currentDate.toDateString();
+            dateT.textContent = currentDate.toLocaleTimeString();
+        }
+
+        const dateBtn = document.getElementById("clickbtn");
+        dateBtn.addEventListener("click", displayDate);
+    </script>
+</body>
+
+</html>

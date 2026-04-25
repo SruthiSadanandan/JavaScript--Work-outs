@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Currency Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body>
+    <h3 class="section-title1">Currency Converter</h3>
+    <div class="main-content">
+
+        <div class="currency-section">
+
+            <h2 class="section-title">Currency Converter</h2>
+
+            <div class="input-field">
+                <input type="number" class="input-entry js-from-currency" placeholder="Enter amount" min="0"
+                    id="inputFirst">
+
+                <select class="currency-selection js-from-dropdown" id="selectFirst">
+                    <option value="USD">USD - US Dollar</option>
+                    <option value="INR">INR - Indian Rupee</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="GBP">GBP - British Pound</option>
+                    <option value="JPY">JPY - Japanese Yen</option>
+                    <option value="AUD">AUD - Australian Dollar</option>
+                    <option value="CAD">CAD - Canadian Dollar</option>
+                    <option value="CNY">CNY - Chinese Yuan</option>
+                </select>
+            </div>
+
+
+            <button id="swapBtn">
+                <i class="fa-solid fa-arrows-up-down"></i>
+            </button>
+
+
+            <div class="input-field">
+                <input type="number" class="input-entry js-to-currency" placeholder="Converted amount" disabled
+                    id="inputsecond">
+
+                <select class="currency-selection js-to-dropdown" id="selectSecond">
+                    <option value="INR">INR - Indian Rupee</option>
+                    <option value="USD">USD - US Dollar</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="GBP">GBP - British Pound</option>
+                    <option value="JPY">JPY - Japanese Yen</option>
+                    <option value="AUD">AUD - Australian Dollar</option>
+                    <option value="CAD">CAD - Canadian Dollar</option>
+                    <option value="CNY">CNY - Chinese Yuan</option>
+                </select>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

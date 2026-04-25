@@ -1,128 +1,296 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Dom</title>
 
-    </head>
-    <body>
-       <div id="div1">
-  <h2 id="title">Heading 1</h2>
-  <p class="info">Para 1</p>
-  <h2>Heading</h2>
-  <p class="info">Para 2</p>
-</div>
+<head>
+    <title>Dom</title>
 
-<h2>getElementById</h2>
-
-<script>
-function getCube() {//to get input and multiple no 3 times to get cube of number
-    var number = document.getElementById("number").value;// to recieve and store in the variabkle
-    alert(number * number * number);//output as an alertbox
-}
-</script>
-
-<form>
-  Enter No 
-  <input type="text" id="number" name="number">
-  <br><br>
-  <input type="button" value="Cube" onclick="getCube()"/>
-</form>
-<h2>getElementByNmae</h2>
-
-<script>
-function totalElemnts(){
-    var allGenders=document.getElementsByName("gender");// to store the value of the element byname
-    alert("Totla genders:"+allGenders.length);// to get the total length of gender
-}
-
-</script>
-
-<form>
-   Male: <input type="radio" name="gender" value="male">
-   Female: <input type="radio" name="gender" value="female">
-   <input type="button" value="Total gender" onclick="totalElemnts()"/>
-</form>
-<h2>getElementsByTagName</h2>
-
-<script>
-function countPara(){
-    var totalPara=document.getElementsByTagName("p");//storing the tag in the variable called total para
-    alert("Total p tags are:"+totalPara.length);//totla lenth of the tag
-
-}
-
-</script>
-
-<p>This is eg of P tag</p>
- <p class="info">Para 1</p>
-  <h2>Heading</h2>
-  <p class="info">Para 2</p>
-  <p>This paragraph show the details</p>
-  <button onclick="countPara()">Count</button><!--calling function count para-->
-
-  <h2>getElementsByClassName</h2>
-<div class="class1">
-    This is a simple class implemented
-</div>
-<script>
-var x=document.getElementsByClassName("class1");
-document.write("on callng x,it will return a arraylike obj:<br>"+x);//print only the object
-
-
-</script>
-<h2>Example 2</h2>
-<p class="text">hello</p>
-<p class="text">World</p>
-<script>
-    const items=document.getElementsByClassName("text");// to get the class values
-    for(let i=0;i<items.length;i++){//since multiple values are  thrre we  use for loop function
-        console.log(items[i].textContent)//text content will shown even the text elemt also we used it in the console
+</head>
+<style>
+    .active {
+        background-color: green;
+        color: white;
+        padding: 20px;
+        margin-top: 10 px;
     }
-</script>
- <h2>Queryselector</h2>
-<script>
-const elder=document.querySelector("p");//want to take the p tag
-document.write(elder.textContent);//only the first para tag content alone will get printed
-</script>
-<h3>Query Selector All</h3>
-<p class="texts">Hellooooooo</p>
-<p class="texts">WOOOOOOOOOOOOOOOOOOORLD</p>
-<script>
-    const itemi=document.querySelectorAll(".texts");//it will take all the class with texts
-    itemi.forEach(item=>{//it will take each class/element as an element as an individual elemet and run the function
-item.style.color="blue";
-    })
-</script>
- <h2>Append child method</h2>
- <ul id="list">
-    <li>Item 1</li>
- </ul>
-<script>
-newItem=document.createElement("li")//ccreate the var to store the elemnt
-newItem.textContent="Item 2"
-const list=document.getElementById("list");
-list.appendChild(newItem)
-</script>
- <h2>append()</h2>
- <ul id="lists">
-    <li>Item 1</li>
- </ul>
-<script>
-const lists=document.getElementById("lists");//create the element id
 
-const newItems=document.createElement("li");//storing the new elemnt in the new  variaable
-newItems.textContent="Item 3";//text content will make the content visible
-lists.append(newItems);//append the child(item 3) the parent to the existing list 
-</script>
- <h2>innerText & textContent</h2>
- <p id="test">Hi <span style="display:none"> Hidden </span> User </p>
- 
-<script>
- const el=document.getElementById('test');
- document.write(el.innerText);//Hi User// hidden text not printed
- document.write("<br>");
- document.write(el.textContent);//Hi User//hidden text also visible
-</script>
-    </body>
+    .deactive {
+        background-color: red;
+        color: white;
+        padding: 20px;
+        margin-top: 10 px;
+    }
+</style>
+
+<body>
+    <div id="div1">
+        <h2 id="title">Heading 1</h2>
+        <p class="info">Para 1</p>
+        <h2>Heading</h2>
+        <p class="info">Para 2</p>
+    </div>
+
+    <h2>getElementById</h2>
+
+    <script>
+        function getCube() {//to get input and multiple no 3 times to get cube of number
+            var number = document.getElementById("number").value;// to recieve and store in the variabkle
+            alert(number * number * number);//output as an alertbox
+        }
+    </script>
+
+    <form>
+        Enter No
+        <input type="text" id="number" name="number">
+        <br><br>
+        <input type="button" value="Cube" onclick="getCube()" />
+    </form>
+    <h2>getElementByNmae</h2>
+
+    <script>
+        function totalElemnts() {
+            var allGenders = document.getElementsByName("gender");// to store the value of the element byname
+            alert("Totla genders:" + allGenders.length);// to get the total length of gender
+        }
+
+    </script>
+
+    <form>
+        Male: <input type="radio" name="gender" value="male">
+        Female: <input type="radio" name="gender" value="female">
+        <input type="button" value="Total gender" onclick="totalElemnts()" />
+    </form>
+    <h2>getElementsByTagName</h2>
+
+    <script>
+        function countPara() {
+            var totalPara = document.getElementsByTagName("p");//storing the tag in the variable called total para
+            alert("Total p tags are:" + totalPara.length);//totla lenth of the tag
+
+        }
+
+    </script>
+
+    <p>This is eg of P tag</p>
+    <p class="info">Para 1</p>
+    <h2>Heading</h2>
+    <p class="info">Para 2</p>
+    <p>This paragraph show the details</p>
+    <button onclick="countPara()">Count</button><!--calling function count para-->
+
+    <h2>getElementsByClassName</h2>
+    <div class="class1">
+        This is a simple class implemented
+    </div>
+    <script>
+        var x = document.getElementsByClassName("class1");
+        document.write("on callng x,it will return a arraylike obj:<br>" + x);//print only the object
+
+
+    </script>
+    <h2>Example 2</h2>
+    <p class="text">hello</p>
+    <p class="text">World</p>
+    <script>
+        const items = document.getElementsByClassName("text");// to get the class values
+        for (let i = 0; i < items.length; i++) {//since multiple values are  thrre we  use for loop function
+            console.log(items[i].textContent)//text content will shown even the text elemt also we used it in the console
+        }
+    </script>
+    <h2>Queryselector</h2>
+    <script>
+        const elder = document.querySelector("p");//want to take the p tag
+        document.write(elder.textContent);//only the first para tag content alone will get printed
+    </script>
+    <h3>Query Selector All</h3>
+    <p class="texts">Hellooooooo</p>
+    <p class="texts">WOOOOOOOOOOOOOOOOOOORLD</p>
+    <script>
+        const itemi = document.querySelectorAll(".texts");//it will take all the class with texts
+        itemi.forEach(item => {//it will take each class/element as an element as an individual elemet and run the function
+            item.style.color = "blue";
+        })
+    </script>
+    <h2>Append child method</h2>
+    <ul id="list">
+        <li>Item 1</li>
+    </ul>
+    <script>
+        newItem = document.createElement("li")//ccreate the var to store the elemnt
+        newItem.textContent = "Item 2"
+        const list = document.getElementById("list");
+        list.appendChild(newItem)
+    </script>
+    <h2>append()</h2>
+    <ul id="lists">
+        <li>Item 1</li>
+    </ul>
+    <script>
+        const lists = document.getElementById("lists");//create the element id
+
+        const newItems = document.createElement("li");//storing the new elemnt in the new  variaable
+        newItems.textContent = "Item 3";//text content will make the content visible
+        lists.append(newItems);//append the child(item 3) the parent to the existing list 
+    </script>
+    <h2>innerText & textContent</h2>
+    <p id="test">Hi <span style="display:none"> Hidden </span> User </p>
+
+    <script>
+        const el = document.getElementById('test');
+        document.write(el.innerText);//Hi User// hidden text not printed
+        document.write("<br>");
+        document.write(el.textContent);//Hi User//hidden text also visible
+    </script>
+
+    <h2>getAtributes</h2>
+    <a href="https://example.com" id="myLink" title="Old Title" Visit Website></a>
+
+    <script>
+        let link = document.getElementById("myLink");
+        let linkHref = link.getAttribute("href");
+        let linkTitle = link.getAttribute("title");
+        document.write(linkHref);
+        console.log(linkHref);
+        console.log(linkTitle);
+    </script>
+    <h2>setAtributes</h2>
+    <button onClick="changeImage()">Change Image</button>
+    <img id="myImg" src="car2.png" alt="Car" width="150px">
+    <script>
+        let image = document.getElementById("myImg");//connecting the dom
+
+        function changeImage() {
+            image.setAttribute("src", "image.png");//updating the image 
+            image.setAttribute("alt", "New Img");//update the alt
+        }
+
+
+    </script>
+    <h2>CSS Manipulation</h2>
+    <button onclick="addClass()">Add</button>
+    <button onclick="removeClass()">Remove</button>
+    <button onclick="toggleClass()">toggle</button>
+    <div id="box">I am a box</div>
+    <script>
+        let box = document.getElementById("box");
+        function addClass() {
+            box.classList.add('active');
+
+        }
+        function removeClass() {
+            box.classList.remove("active")
+        }
+        function toggleClass() {
+            box.classList.toggle("deactive")
+        }
+
+
+    </script>
+    <h2>Event Listeners-addEventListener</h2>
+    <button id="mybutton">Click me</button>
+    <script>
+        const button = document.getElementById("mybutton");
+
+        button.addEventListener("click", () => {
+            console.log("button Clicks")
+        })
+    </script>
+    <h2>Event Listeners-removeEventListener</h2>
+    <button id="mybutton">Click me</button>
+    <script>
+        const button1 = document.getElementById("mybutton");// create a var to do action 
+
+        function handleClicked() {
+            console.log("Button Clicked");
+        }
+        //Add event
+        button1.addEventListener("click", handleClicked)
+        //remove event after 3s
+        setTimeout(() => {// to set timout for the event to happen
+            button1.removeEventListener("click", handleClicked);//remove syntax
+            console.log("event removed");// toc onfirm that is removed we are adding one satement
+        }, 3000);// we are giving timing for the event to end within 3 sec
+
+    </script>
+    <h2>Multiple Event Listeners single Elements</h2>
+    <button id="btn">Click me</button>
+    <script>
+        const button2 = document.getElementById("btn");// create a var to do action // store somewhere to add
+
+        function sayHi() {
+            console.log("clicked");
+
+        }
+        button2.addEventListener("click", sayHi);//multiple eventes on single elements //clicked
+        button2.addEventListener("click", () => {
+            console.log("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")//hi
+        });
+        button2.addEventListener("click", () => {
+            console.log("Helllllllllllllllllllllllllllllllllllllllo")//hello
+        });
+
+    </script>
+    <h2>Mouse KeyBorad Event</h2> <!--To Click or hover so that we can test whether the fn is working or not-->
+    <div id="box1">Hover/Click me</div>
+    <input type="text" id="inputBox" placeholder="Type...................."><!--To test the keyboard action-->
+    <p id="output">Output</p><!--To displayt the fn output-->
+    <script>
+        //mouse Event
+        const box1 = document.getElementById("box1");
+        const input = document.getElementById("inputBox");
+        const output = document.getElementById("output");
+        box1.addEventListener("dblclick", () => {//double click
+            output.textContent = "double Clicked"//textcontent to display  the output
+        })
+        box1.addEventListener("mousedown", () => {//mouse down
+            output.textContent = "Mouse Down";
+        });
+        box1
+        box1.addEventListener("mouseup", () => {//mose up
+            output.textContent = "Mouse up";
+        });
+        box1.addEventListener("mouseleave", () => {//mose leave
+            output.textContent = "Mouse leave";
+        });
+        box1.addEventListener("mousemove", () => {//mose move
+            output.textContent = "Mouse move";
+        });
+
+
+
+        ///KeyBoard Events
+
+        input.addEventListener("keydown", () => { //key down event
+            output.textContent = "key Down"
+        });
+
+        input.addEventListener("keyup", () => { //key up event
+            output.textContent = "Key Released"
+        })
+
+        input.addEventListener("keypress", () => { //key press event
+            output.textContent = "Key Press"
+        });
+
+    </script>
+    <h2>Event Object Props</h2>
+    <h3>Obj that gives info about What happened (about the click)</h3>
+    <a href="https:www.google.com" id="links">Go to google</a>
+    <p id="outputs"></p>
+
+    <script>
+        const links = document.getElementById("links");//store elemnt in the var
+        const outputs = document.getElementById("outputs");//store the output in the element to display
+        links.addEventListener("click", function (event) {//event object method(check the syntax)
+            event.preventDefault();
+
+            outputs.innerHTML =
+                // `event.type ${event.type}`
+                "event.type" + event.type + "<br>" +
+                "event.target" + event.target.tagName + "<br>" +
+                "event.currentTarget" + event.currentTarget.tagName + "<br>" +
+                "event.defualtPrinted" + event.defaultPrevented;
+        });
+    </script>
+</body>
+
 </html>
-

@@ -2,10 +2,11 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aura</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
 
 </head>
 
@@ -26,10 +27,21 @@
                 <li class="nav-list"> <a href="#" class="nav-link">Products</a></li>
                 <li class="nav-list"> <a href="#" class="nav-link">Service</a></li>
                 <li class="nav-list"> <a href="#" class="nav-link">Contact</a></li>
-                <!-- <li class="nav-list"> <a href="#" class="nav-link"><i class="share-icon></a></li>
-            
+                <li class="nav-list">
+                    <a class="nav-link cart-link" href="checkout.html">
+                        <div class="cart-container">
+                            <img class="cart-icon" src="images/icons/cart-icon.png">
+                            <span class="cart-quantity js-cart-quantity">0</span>
+                        </div>
+                    </a>
+                </li>
 
-             -->
+                </a></li>
+
+                <!-- <li class="nav-list"> <a href="#" class="nav-link"><i class="share-icon></a></li>
+                
+
+                -->
 
             </ul>
             <button id="menu-open-button">
@@ -43,31 +55,256 @@
             <div class="section-content">
                 <div class="hero-details">
                     <h6 class="title">FINE JWELLERY ft- 2020</h6>
-                    <h4>Jewellery is the most <br>transformative thing you  can wear.</h4>
+                    <h4>Jewellery is the most <br>transformative thing you can wear.</h4>
                     <div class="buttons">
                         <button class="explore" id="btn1">Explore Now</button>
                         <button class="our-services" id="btn2">Our services</button>
                     </div>
                 </div>
 
-                <div class="img-hero">
+                <div class="img-hero ">
                     <img src="images/ring-bg.png">
                 </div>
             </div>
         </div>
 
 
-      <!--About Session -->
-      <section class="about-session"></section>
-      <div class="section-content">
-        <div class="about-image-wrapper">
-            <img src="" alt="" class="about-image">
+        <!--About Session -->
+        <section class="about-session">
+            <div class="section-content">
+                <div class="about-image-wrapper">
+                    <img src="images/ring.jpg" alt="About" class="about-image">
+                </div>
+                <div class="about-details">
+                    <h2 class="section-title">About Us</h2>
+                    <p class="text">At Aura, we believe that jewellery is more than just an accessory—it's a
+                        reflection of your style, your moments, and your story. Every piece we create is designed to
+                        make
+                        you feel confident, beautiful, and unique.
+
+                        Our collections are crafted with passion and precision, using high-quality materials to ensure
+                        timeless designs that last. From delicate everyday wear to statement pieces for special
+                        occasions,
+                        we bring you jewellery that complements every moment of your life.
+
+                        We focus on combining modern trends with classic elegance, creating pieces that never go out of
+                        style. Each design is carefully made to add a touch of sparkle and sophistication to your look.
+                    </p>
+                    <div class="social-link-list">
+                        <a href="#" class="social-links"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="social-links"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-links"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Menu Section -->
+        <div class="menu-section">
+            <h2 class="section-title">Our Jwelleries</h2>
+
+            <div class="section-content">
+                <ul class="menu-list">
+
+                    <li class="menu-item">
+                        <img class="menu-img" src="images/bangle.png">
+                        <h3 class="name">Bangle</h3>
+                        <p class="text">Bangles are a type of rigid bracelet...
+                    </li>
+
+                    <li class="menu-item">
+                        <img class="menu-img" src="images/earings.jpg">
+                        <h3 class="name">Earring</h3>
+                        <p class="text">Earrings come in many styles...
+                    </li>
+
+                    <li class="menu-item">
+                        <img class="menu-img" src="images/neck1.jpg">
+                        <h3 class="name">Necklace</h3>
+                        <p class="text">Necklaces add elegance...
+                    </li>
+
+                    <li class="menu-item">
+                        <img class="menu-img" src="images/r1.jpg">
+                        <h3 class="name">Ring</h3>
+                        <p class="text">Rings symbolize love and style...
+                    </li>
+
+                    <li class="menu-item">
+                        <img class="menu-img" src="images/l1.jpg">
+                        <h3 class="name">Locket</h3>
+                        <p class="text">Lockets carry memories...
+                    </li>
+
+                    <li class="menu-item">
+                        <img class="menu-img" src="images/neck2.jpg">
+                        <h3 class="name">Necklace</h3>
+                        <p class="text">Modern necklace designs...
+                    </li>
+
+                </ul>
+            </div>
         </div>
-      </div>
-      
+        <!--Customers section-->
+
+        <!-- Customers Section -->
+        <section class="customers-section">
+            <h2 class="section-title">Customers</h2>
+
+            <div class="section-content">
+                <div class="swiper">
+
+                    <div class="swiper-wrapper">
+
+                        <!-- Slide 1 -->
+                        <!-- <div class="swiper-slide">
+                        <div class="customer-card">
+                            <img src="images/necklace.png" class="user-image">
+                            <h3 class="name">Vini</h3>
+                            <p class="feedback">"Loved the jewellery"</p>
+                        </div>
+                    </div>
+
+                     Slide 2
+                    <div class="swiper-slide">
+                        <div class="customer-card">
+                            <img src="images/necklace.png" class="user-image">
+                            <h3 class="name">Anu</h3>
+                            <p class="feedback">"Loved the jewellery"</p>
+                        </div>
+                    </div>
+
+                   Slide 3
+                    <div class="swiper-slide">
+                        <div class="customer-card">
+                            <img src="images/necklace.png" class="user-image">
+                            <h3 class="name">Lin</h3>
+                            <p class="feedback">"Loved the jewellery"</p>
+                        </div>
+                    </div>
+
+                     Slide 4
+                    <div class="swiper-slide">
+                        <div class="customer-card">
+                            <img src="images/necklace.png" class="user-image">
+                            <h3 class="name">Gin</h3>
+                            <p class="feedback">"Loved the jewellery"</p>
+                        </div>
+                    </div>
+
+              Slide 
+                    <div class="swiper-slide">
+                        <div class="customer-card">
+                            <img src="images/necklace.png" class="user-image">
+                            <h3 class="name">Thee</h3>
+                            <p class="feedback">"Loved the jewellery"</p>
+                        </div>
+                    </div> -->
+
+                    </div>
+
+                    <!-- Controls -->
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                </div>
+            </div>
+        </section>
+        <!--Gallery-->
+        <!-- <section class="gallery-section">
+                <h2 class="section-title">Gallery</h2>
+                <div class="section-content">
+                    <div class="gallery-list">
+                        <ul class="gallery-list">
+                            <li class="gallery-item">
+                                <img src="images/bangle2.png" class="gallery-img">
+                            </li>
+                            <li class="gallery-item">
+                                <img src="images/bangle2.png" class="gallery-img">
+                            </li>
+                            <li class="gallery-item">
+                                <img src="images/bangle2.png" class="gallery-img">
+                            </li>
+                            <li class="gallery-item">
+                                <img src="images/bangle2.png" class="gallery-img">
+                            </li>
+                            <li class="gallery-item">
+                                <img src="images/bangle2.png" class="gallery-img">
+                            </li>
+                            <li class="gallery-item">
+                                <img src="images/bangle2.png" class="gallery-img">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section> -->
+        <div class="main">
+            <!--product-->
+            <div class="products-grid js-product-grid">
+
+            </div>
+            <!--Contact-->
+            <section class="contact-section">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="section-content">
+                    <ul class="contact-info-list">
+
+                        <li class="contact-info">
+                            <i class="fa-solid fa-location-crosshairs"></i>
+                            <span>1234 Uterpreshhhhhh</span>
+                        </li>
+
+                        <li class="contact-info">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>info@aura.com</span>
+                        </li>
+
+                        <li class="contact-info">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+91 98765 43210</span>
+                        </li>
+
+                        <li class="contact-info">
+                            <i class="fa-solid fa-globe"></i>
+                            <span>www.aura.com</span>
+                        </li>
+
+                    </ul>
+                    <form action="#" class="contact-form">
+                        <input type="text" placeholder="Enter Your name" class="form-input">
+                        <input type="email" placeholder="Enter Your email" class="form-input">
+                        <input type="email" placeholder="Enter Your email" class="form-input">
+
+                        <textarea placeholder="Your message" class="form-input" required>
+
+        </textarea>
+                        <button class="submit-button">Submit</button>
+                    </form>
+                </div>
+            </section>
         </div>
+        <footer class="footer-section">
+            <div class="section-content">
+                <p class="copyright-text">@2023 Aura </p>
+                <div class="social-link-list">
+                    <a href="#" class="social-links"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="social-links"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-links"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+                <p class="policy-text">
+                      <a href="#" class="policy-link">Privacy Link</a>
+                      <span class="separator">•</span>
+                </p>
+                 <p class="policy-text">
+                      <a href="#" class="policy-link">Refund Link</a>
+                      <span class="separator">•</span>
+                </p>
+            </div>
+        </footer>
     </main>
-    <script src="script/script.js"></script>
+    <!--Swiper-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script type="module" src="../script/script.js"></script>
 </body>
 
 

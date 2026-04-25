@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<h2>map()</h2>
+<script>
+// Transform objects
+const users = [
+  {name: "Alice", age: 25},
+  {name: "Bob",   age: 30},
+];
+const names = users.map(u => u.name);
+// ["Alice", "Bob"]
+    console.log(names);
+    document.write(names);
+</script>
+
+
+<h2>filter()</h2>
+<script>
+// Filter objects by property
+const products = [
+  {name: "Phone", inStock: true},
+  {name: "Laptop", inStock: false},
+  {name: "TV",  inStock: true},
+];
+const available = products.filter(p => p.inStock);
+// [{name:"Phone",...}, {name:"TV",...}]
+ document.write(JSON.stringify(available));
+</script>
+
+<h2>reduce()</h2>
+<script>
+    const items = [
+        { cat: "fruit", name: "apple" },
+        {
+            cat:
+                "veg", name: "carrot"
+        },
+        {
+            cat:
+                "fruit", name: "mango"
+        },
+    ];
+    const grouped = items.reduce((acc, item) => {
+        if (!acc[item.cat]) acc[item.cat] = [];
+        acc[item.cat].push(item.name); 
+        return acc;
+    }, {});
+    console.log(grouped);//fruit: (2) ['apple', 'mango'] ,veg: ['carrot']
+
+   document.write(JSON.stringify(grouped));
+
+</script>
+
+</html>

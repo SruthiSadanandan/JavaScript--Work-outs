@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Multi Input Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 25px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        .inline-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .inline-group input {
+            width: auto;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background: rgb(110, 179, 110);
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: grey;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h3>Registration Form</h3>
+        <form name="myform">
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your name" required id="fname">
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" placeholder="Enter your name" required id="lname">
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="Enter your email" required id="email">
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" placeholder="Enter password" required id="pass1">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" placeholder="Enter password" required id="pass2">
+            </div>
+
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="inline-group">
+                    <label><input type="radio" name="gender"> Male</label>
+                    <label><input type="radio" name="gender"> Female</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Hobbies</label>
+                <div class="inline-group">
+                    <label><input type="checkbox"> Reading</label>
+                    <label><input type="checkbox"> Sports</label>
+                    <label><input type="checkbox"> Music</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Country</label>
+                <select>
+                    <option>Select Country</option>
+                    <option>India</option>
+                    <option>USA</option>
+                    <option>UK</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Message</label>
+                <textarea placeholder="Write something..."></textarea>
+            </div>
+
+            <button type="submit" class="btn" onclick="validate()">Submit</button>
+
+        </form>
+    </div>
+    <script>
+        function validate() {
+            var n = document.myform.fname.value;
+            var l = document.myform.lname.value;
+
+            if (n == "" || n == null) {
+                alert('first name can not empty');
+                return false;
+            }
+            if (l == "" || l == null) {
+                alert('last name can not empty');
+                return false;
+            }  
+             var password = document.myform.pass1.value;
+            var cpassword = document.myform.pass2.value;
+            if (password.length < 6) {
+                alert("Password must contain 6 charecters");
+                return false;
+            }
+            if(password==cpassword){
+                alert("both password are same ");
+            }else{
+                alert("password and confirm password should be same")
+            }
+            alert("form submitted successfully");
+
+            return true;
+        }
+    </script>
+  
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+}
+
+.currency-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 350px;
+    padding: 20px;
+    background-color: antiquewhite;
+    border-radius: 12px;
+}
+
+.section-title {
+    color: black;
+}
+
+
+.input-field {
+    display: flex;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.input-entry {
+    width: 250px;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+
+.currency-selection {
+    border: none;
+    height: 40px;
+    width: 80px;
+    background-color: #eee;
+    cursor: pointer;
+    padding: 10px;
+}
+
+
+#swapBtn {
+    border: none;
+    width: 60px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    background-color: grey;
+    cursor: pointer;
+    /* transition: 0.3s; */
+}
+
+#swapBtn:hover {
+    background-color: black;
+    /* transform: rotate(180deg); */
+}
+
+.exchange-rate {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.currency-selection:focus,
+.input-entry:focus {
+    outline: 0;
+}
+
+.section-title1 {
+    color: white;
+}

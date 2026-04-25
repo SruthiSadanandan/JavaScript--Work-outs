@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="form-section">
+            <form id="resumeForm">
+
+                <h2>Resume Builder</h2>
+
+                <input type="text" id="name" placeholder="Full Name">
+                <input type="text" id="email" placeholder="Email">
+                <input type="text" id="phone" placeholder="Phone">
+
+                <textarea id="summary" placeholder="Profile Summary"></textarea>
+                <textarea id="skills" placeholder="Skills (comma separated)"></textarea>
+                <textarea id="education" placeholder="Education"></textarea>
+                <textarea id="experience" placeholder="Experience"></textarea>
+                <textarea id="projects" placeholder="Projects"></textarea>
+
+              
+                <button type="button" onclick="generateResume()">Generate Resume</button>
+
+            </form>
+        </div>
+
+
+        <div class="preview-section" id="resumePreview">
+            <h1 id="pName">Your Name</h1>
+            <p id="pEmail"></p>
+            <p id="pPhone"></p>
+
+            <h3>Profile</h3>
+            <p id="pSummary"></p>
+
+            <h3>Skills</h3>
+            <ul id="pSkills"></ul>
+
+            <h3>Academic Section</h3>
+            <p id="pEducation"></p>
+
+            <h3>Experience</h3>
+            <p id="pExperience"></p>
+            <h3>Projects</h3>
+            <p id="pProjects"></p>
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

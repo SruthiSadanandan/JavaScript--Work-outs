@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Capturing-Bubbling-Target method</title>
+</head>
+
+<body>
+    <h3>Capturing-Target-Bubbling method</h3>
+    <div id="grand-paranet">
+        <div id="parent">
+            <button id="child">Click Me</button>
+        </div>
+    </div>
+    <script>
+        //capturing
+        document.addEventListener("DOMContentLoaded", () => {  //loading the page using dom method ,or new Dom method to load faster
+            const grandparent = document.getElementById("grand-paranet");// the event flows from top to bottom,create the var to store and  to do the event action
+            const parent = document.getElementById("parent");//create the var to parent store and  to do the event action
+            const child = document.getElementById("child");//create the var to child store and  to do the event action
+            //     grandparent.addEventListener("click",()=>//event capture 
+            //         console.log("Grand Parent Capture"),true
+            //     );
+            //     parent.addEventListener("click",()=>
+            //         console.log(" Parent Capture"),true
+            //     );
+            //     child.addEventListener("click",()=>
+            //         console.log("child Capture"),true
+            //     );
+
+
+            /*Target*/
+            child.addEventListener("click", () => console.log("Child-target/Bubbling"));//the event flow from bottom to top// it print child first
+            parent.addEventListener("click", () =>
+                console.log(" Parent Target/Bubbling"),//parent target/bubbling
+            );
+            grandparent.addEventListener("click", () =>
+                console.log("Grand Parent Target/Bubbling"),//child target/bubbling
+            );
+        });
+
+
+
+
+    </script>
+    <h3>stopPropogation</h3>//stop the upward movement
+    <div id="navbar">
+        <button id="home">Home</button>
+    </div>
+    <script>
+        const navbar = document.getElementById("navbar");//var created to store navbar and do the event action// to work on js we need an element
+        const home = document.getElementById("home");//var created to store and do the event action
+
+        navbar.addEventListener("click", () => console.log("Navbar Clicked"));//add event listener for navbar
+        home.addEventListener("click", () => {
+            event.stopPropagation();// to stop propogation //onliy print stop propogation
+            console.log("Home Clicked")
+        });
+    </script>
+    <h3>Prevent Defult</h3>
+    <form action="" id="myForm"><!--Parent-->
+        <input type="text" placeholder="Type your name"><!--Child-->
+        <button id="submit">Submit</button><!--Child-->
+    </form>
+    <p id="msg"></p><!--Output-->
+    </div>
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            event.preventDefault();//stop page reload
+            document.getElementById("msg").textContent = "Form submission stopped"
+
+        })
+
+    </script>
+     <h3>Event delegation NavBar</h3>// alow parent to handle the event
+    <ul id="menu">
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+    </div>
+    <button id="clickbtn">Click</button>
+    <p id="date"></p>
+     <p id="time"></p>
+  <script>
+    //      const ul =document.getElementById("menu");
+    //   ul.addEventListener("click",(e)=>{
+    //     if(e.target.tagName==="LI"){
+    //         console.log("item click");
+    //     }
+    //   })
+      const ul =document.getElementById("menu");
+      ul.addEventListener("click",(e)=>{
+        if(e.target.tagName==="LI"){
+            console.log(event.target.textContent);// to print the text inside the element
+
+
+
+        }
+      });
+       function  displayDate(){
+        const currentdate=new Date;
+     const dateP=document.getElementById("date");
+      const dateT=document.getElementById("time");
+   dateP.textContent=currentdate.toDateString();
+   dateT.textContent=currentdate.toLocaleTimeString();
+    }
+     const  dateBtn=document.getElementById("clickbtn");
+      dateBtn.addEventListener("click",displayDate);
+    </script>
+   
+</body>
+
+</html>
